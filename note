@@ -1,0 +1,9 @@
+-- create .crt certificate as described in excerce using openssl
+
+openssl pkcs12 -export -in ../CAcert.crt -inkey ../privkeyB.pem -name 
+expertwall -out certificate3.p12
+
+keytool -importkeystore -deststorepass password -destkeystore 
+certificate3.jks -srckeystore certificate3.p12 -srcstoretype PKCS12
+
+https://medium.com/@JavaArchitect/configure-ssl-certificate-with-spring-boot-b707a6055f3
